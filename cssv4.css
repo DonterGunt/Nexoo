@@ -2906,8 +2906,8 @@ body {
 
 @media screen and (max-width: 479px) {
     .swiper-slide.is-slider-titles {
-        padding-right: 0%;
-        padding-left: 25%;
+        padding-right: 25%;
+        padding-left: 0%;
         -webkit-box-align: stretch;
         -webkit-align-items: stretch;
         -ms-flex-align: stretch;
