@@ -2907,15 +2907,15 @@ body {
 @media screen and (max-width: 479px) {
     .swiper-slide.is-slider-titles {
         padding-right: 25%;
-        padding-left: 10%;
+        padding-left: 25%;
         -webkit-box-align: stretch;
         -webkit-align-items: stretch;
         -ms-flex-align: stretch;
         align-items: stretch;
-        -webkit-box-flex: 0;
-        -webkit-flex: 0;
-        -ms-flex: 0;
-        flex: 0;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
     }
 
     .navbar {
