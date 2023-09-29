@@ -2910,8 +2910,8 @@ body {
     .swiper-slide.is-slider-titles {
         padding-right: 10%;
         padding-left: 10%;
-        width: 1000%; /* Cambia este valor para controlar el ancho */
-        margin: 0 auto; /* Centra el elemento horizontalmente */
+        width: 80%; /* Cambia este valor para controlar el ancho */
+        margin: 50%; /* Centra el elemento horizontalmente */
         -webkit-box-align: stretch;
         -webkit-align-items: stretch;
         -ms-flex-align: stretch;
