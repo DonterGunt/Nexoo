@@ -2908,10 +2908,7 @@ body {
     .swiper-slide.is-slider-titles {
         padding-right: 25%;
         padding-left: 10%;
-        -webkit-box-align: stretch;
-        -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-        align-items: stretch;
+ 
         -webkit-box-flex: 1;
         -webkit-flex: 1;
         -ms-flex: 1;
