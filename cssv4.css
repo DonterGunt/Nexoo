@@ -3211,3 +3211,27 @@ body {
     z-index: 1; /* Asegura que la capa esté por encima de la imagen */
 }
 
+@media screen and (min-width: 768px){ 
+
+    #imagenPC{
+        display:block;
+    }
+
+    #imagenMovil{
+        display: none;
+    }
+    
+}
+
+
+@media screen and (max-width: 768px){ 
+
+    #imagenPC{
+        display:none;
+    }
+
+    #imagenMovil{
+        display: block;
+    }
+    
+}
