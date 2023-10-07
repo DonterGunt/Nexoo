@@ -2713,6 +2713,10 @@ body {
     height: 25px;
 }
 
+.imagew {
+    width: 50px;
+    height: 50px;
+}
 .nav-menu {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2770,10 +2774,11 @@ body {
 
 .social-link_component {
     position: absolute;
-    left: 101px;
+    left: 120px;
     z-index: 10000;
     display: -ms-grid;
     display: grid;
+    align-content: stretch;
     width: 3%;
     height: 70%;
     margin-top: 5%;
@@ -2792,9 +2797,7 @@ body {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-align-content: space-between;
     -ms-flex-line-pack: justify;
-    align-content: space-between;
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
@@ -2803,7 +2806,7 @@ body {
     grid-auto-columns: 1fr;
     grid-column-gap: 0em;
     grid-row-gap: 0em;
-    grid-template-columns: repeat(auto-fit, 1.5rem);
+    grid-template-columns: repeat(auto-fit, 4rem);
     -ms-grid-rows: 0.25fr 0.25fr 0.25fr;
     grid-template-rows: 0.25fr 0.25fr 0.25fr;
     background-color: transparent;
@@ -3269,4 +3272,18 @@ body {
     height: 80%;
 }
 
+.enlace-imagen {
+    position: fixed; /* Posición absoluta en relación con el documento */
+    bottom: 40px; /* Distancia desde la parte inferior */
+    left: 25px; /* Distancia desde la izquierda */
+    /* Puedes ajustar las distancias según tus necesidades */
+    width: 50px; /* Ancho de la imagen */
+    height: 50px; /* Altura de la imagen */
+    z-index: 9999; /* Controla el nivel de apilamiento, para que esté por encima del contenido */
+}
 
+.imagen-flotante {
+    width: 100%; /* Ancho al 100% del contenedor (enlace) */
+    height: 100%; /* Altura al 100% del contenedor (enlace) */
+
+}
