@@ -1,38 +1,37 @@
-// Obtén el elemento del slider y sus diapositivas
-const slider = document.getElementById('slider');
-const slides = slider.querySelectorAll('.swiper-slide');
+// Obtén el elemento del slider y sus diapositivas por clase
+const sliders = document.querySelectorAll('.slider-gallery_component');
+const slides = document.querySelectorAll('.slider-gallery_bottom-wrapper .swiper-slide');
 
-// Lleva un registro de la diapositiva actual
-let currentSlide = 0;
+// Lleva un registro de la diapositiva actual para cada slider
+const currentSlides = Array(sliders.length).fill(0);
 
-// Detecta el evento de desplazamiento hacia abajo en dispositivos móviles
-window.addEventListener('touchstart', handleTouchStart, false);
-window.addEventListener('touchmove', handleTouchMove, false);
+// Detecta el evento de desplazamiento hacia abajo en dispositivos móviles para cada slider
+sliders.forEach((slider, index) => {
+  slider.addEventListener('touchstart', (event) => handleTouchStart(event, index), false);
+  slider.addEventListener('touchend', (event) => handleTouchEnd(event, index), false);
+});
 
-let x1 = null;
+let y1 = null;
 
-function handleTouchStart(event) {
-  x1 = event.touches[0].clientX;
+function handleTouchStart(event, index) {
+  y1 = event.touches[0].clientY;
 }
 
-function handleTouchMove(event) {
-  if (!x1) return;
-  const x2 = event.touches[0].clientX;
-  const deltaX = x1 - x2;
+function handleTouchEnd(event, index) {
+  if (!y1) return;
+  const y2 = event.changedTouches[0].clientY;
+  const deltaY = y2 - y1;
 
-  // Establece una distancia mínima para considerar el desplazamiento
-  if (Math.abs(deltaX) < 50) return;
-
-  // Mueve el slider hacia la izquierda o la derecha según la dirección del desplazamiento
-  if (deltaX > 0 && currentSlide < slides.length - 1) {
-    currentSlide++;
-  } else if (deltaX < 0 && currentSlide > 0) {
-    currentSlide--;
+  // Establece una distancia mínima para considerar el desplazamiento hacia abajo
+  if (deltaY > 50 && currentSlides[index] < slides.length - 1) {
+    currentSlides[index]++;
+  } else if (deltaY < -50 && currentSlides[index] > 0) {
+    currentSlides[index]--;
   }
 
-  // Aplica el desplazamiento horizontal al slider
-  const slideWidth = slides[currentSlide].offsetWidth;
-  slider.scrollLeft = currentSlide * slideWidth;
+  // Aplica el desplazamiento vertical al slider correspondiente
+  const slideHeight = slides[currentSlides[index]].offsetHeight;
+  sliders[index].scrollTop = currentSlides[index] * slideHeight;
 
-  x1 = null; // Restablece la posición inicial
+  y1 = null; // Restablece la posición inicial
 }
