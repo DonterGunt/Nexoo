@@ -3,6 +3,7 @@
 <html>
 
 <head>
+    <script src="jss.js"></script>
     <meta charset="utf-8" />
     <title>Nexoo</title>
     <meta content="La precisión de la inteligencia artificial a su servicio." name="description" />
@@ -34,10 +35,52 @@
     <script>
         gtag('event', 'conversion', { 'send_to': 'AW-11361880682/alfiCMu0z-gYEOqU4qkq' });
     </script>
+    <script>
+        // Variable para almacenar la posición inicial del toque
+        let touchStartY = null;
+    
+        // Detecta el evento táctil "touchstart"
+        document.addEventListener("touchstart", function(event) {
+            // Almacena la posición vertical inicial del toque
+            touchStartY = event.touches[0].clientY;
+        });
+    
+        // Detecta el evento táctil "touchmove"
+        document.addEventListener("touchmove", function(event) {
+            if (touchStartY !== null) {
+                // Calcula la diferencia entre la posición actual y la inicial
+                let deltaY = event.touches[0].clientY - touchStartY;
+                
+                // Establece un umbral para el desplazamiento vertical
+                let threshold = 10; // Ajusta este valor según tus preferencias
+    
+                if (Math.abs(deltaY) >= threshold) {
+                    // Si la diferencia es mayor o igual al umbral, considera que es un desplazamiento vertical
+                    // Ajusta la posición horizontal del carrusel según la dirección del desplazamiento
+                    let direction = deltaY > 0 ? "derecha" : "izquierda"; // Cambia "derecha" e "izquierda" según tus necesidades
+    
+                    // Mueve el carrusel según la dirección
+                    if (direction === "derecha") {
+                        // Desplazamiento hacia la derecha
+                        // Aquí debes llamar a la función para mover el carrusel hacia la derecha
+                    } else {
+                        // Desplazamiento hacia la izquierda
+                        // Aquí debes llamar a la función para mover el carrusel hacia la izquierda
+                    }
+    
+                    // Restablece la posición inicial del toque
+                    touchStartY = null;
+                    
+                    // Evita el desplazamiento vertical de la página
+                    event.preventDefault();
+                }
+            }
+        });
+    </script>
 </head>
 
 <body class="body">
-    <script src="jss.js"></script>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
     <div class="page-styles w-embed">
@@ -91,6 +134,7 @@
                 </style>
             </div>
         </div>
+        
         <div class="page-main">
             <div class="section is-slider-gallery">
                 <div class="slider-gallery_component">
