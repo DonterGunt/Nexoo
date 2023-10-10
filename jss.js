@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
-    var sliderContainer = document.querySelector(".slider-gallery_component");
+    var sliderContainer = document.querySelector(".slider-gallery_bottom-wrapper .swiper-slide");
 
     // Detectar el ancho de la pantalla
     var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
